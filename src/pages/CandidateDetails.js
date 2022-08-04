@@ -31,7 +31,7 @@ function CandidateDetailsPage(props) {
                 <>
                      
                     <h1>{candidate.firstName} {candidate.lastName}</h1>
-                    <img src={candidate.image} /> 
+                    <img src={candidate.image} alt="candidate"/> 
                     <p>Primary Role: {candidate.role}</p>
                     <p>Email: {candidate.email}</p>
                     <p>Phone: {candidate.phone}</p>
