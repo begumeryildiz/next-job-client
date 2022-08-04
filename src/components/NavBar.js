@@ -12,10 +12,12 @@ function Navbar() {
            <NavLink to="/jobs" >Jobs</NavLink>  | 
            <NavLink to="/companies" >Companies</NavLink>  | 
            <NavLink to="/candidates" >Candidates</NavLink>  | 
+          
 
 
            {isLoggedIn && (
                 <>
+                    <NavLink to="/myprofile" >My Profile</NavLink>
                     <span> Hi, {user && user.name}</span> 
                     &nbsp;
                     <button onClick={logOutUser}>Logout</button>
