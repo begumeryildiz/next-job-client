@@ -11,6 +11,7 @@ import CompanyDetailsPage from "./pages/CompanyDetails";
 import CandidatesListPage from "./pages/CandidatesListPage";
 import CandidateDetailsPage from "./pages/CandidateDetails";
 import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/candidates" element={<CandidatesListPage />} />
                 <Route path="/candidates/:candidateId" element={<CandidateDetailsPage />} />
                 <Route path="/signup" element={<SignupPage />} />
+                <Route path="/login" element={<LoginPage />} />
             </Routes>
             <Footer />
         </div>

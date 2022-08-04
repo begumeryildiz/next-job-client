@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
@@ -73,7 +73,7 @@ function SignupPage(props) {
 
 
             <p>Already have account?</p>
-            <Link to={"/login"}> Login</Link>
+            <NavLink to={"/login"}> Login</NavLink>
         </div>
     )
 }
