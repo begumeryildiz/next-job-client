@@ -21,7 +21,8 @@ function JobDetailsPage(props) {
 
     useEffect(() => {
         getJob();
-    });
+    // eslint-disable-next-line
+    }, []);
 
 
     return (

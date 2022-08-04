@@ -24,7 +24,7 @@ function CompaniesListPage() {
         {companies.map((company) => {
           return (
             <div className="CompanyCard card" key={company._id} >
-              <NavLink to={`/Companies/${companies._id}`}>
+              <NavLink to={`/companies/${company._id}`}>
                 <h3>{company.name}</h3>
               </NavLink>
             </div>
