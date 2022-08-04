@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import Footer from "./components/Footer";
 import JobsListPage from "./pages/JobsListPage";
 import JobDetailsPage from "./pages/JobDetailsPage";
+import CompaniesListPage from "./pages/CompaniesList";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/jobs" element={<JobsListPage />} />
                 <Route path="/jobs/:jobId" element={<JobDetailsPage />} />
+                <Route path="/companies" element={<CompaniesListPage />} />
             </Routes>
             <Footer />
         </div>
