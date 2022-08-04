@@ -9,7 +9,7 @@ function SignupPage(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
-    const [userType, setUserType] = useState("");
+    const [userType, setUserType] = useState("candidate");
 
     const [errorMessage, setErrorMessage] = useState(undefined);
 
@@ -63,9 +63,9 @@ function SignupPage(props) {
                 /><br /><br />
 
                 <label>User Type:</label>
-                <select>
-                    <option value="user" onChange={(e) => setUserType(e.target.value)}>Candidate</option>
-                    <option value="company" onChange={(e) => setUserType(e.target.value)}>Company</option>
+                <select value={userType} onChange={(e) => setUserType(e.target.value)}>
+                    <option value="candidate" >Candidate</option>
+                    <option value="company">Company</option>
                 </select><br /><br />
 
                 <button type="submit">Sign Up</button>
