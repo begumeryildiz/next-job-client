@@ -95,7 +95,7 @@ function AddEditCompany(props) {
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                />
+                /><br /><br />
 
                 <label>Description:</label>
                 <textarea
@@ -114,7 +114,7 @@ function AddEditCompany(props) {
                 /><br /><br />
 
                 <button type="submit">Submit</button>
-            </form>
+            </form><br /><br />
 
             <NavLink to="/jobs">
                 <button>Add jobs</button>

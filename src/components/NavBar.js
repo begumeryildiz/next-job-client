@@ -15,18 +15,14 @@ function Navbar() {
 
 
 
-            {isLoggedIn && user.userType === "candidate" && (
+            {isLoggedIn && (
                 <>
-                    <NavLink to="/myprofile" >My Profile</NavLink>
-                    <span> Hi, {user && user.name}</span>
-                    &nbsp;
-                    <button onClick={logOutUser}>Logout</button>
-                </>
-            )}
-
-            {isLoggedIn && user.userType === "company" && (
-                <>
-                    <NavLink to="/mycompany" >My Company</NavLink>
+                {user.userType === "user" && (
+                     <NavLink to="/myprofile" >My Profile</NavLink>
+                )}
+                {user.userType === "company" && (
+                     <NavLink to="/mycompany" >My Company</NavLink>
+                )}
                     <span> Hi, {user && user.name}</span>
                     &nbsp;
                     <button onClick={logOutUser}>Logout</button>
