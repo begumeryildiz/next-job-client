@@ -76,8 +76,9 @@ function AddEditCandidate(props) {
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {
-                const candidateId = response._id;
-                navigate(`/candidates/${candidateId}`);
+                const newCandidateId = response.data._id;
+                console.log(response)
+                navigate(`/candidates/${newCandidateId}`);
             })
             .catch((error) => console.log(error));
         } else {
@@ -88,7 +89,7 @@ function AddEditCandidate(props) {
                 { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {
-                const candidateId = response._id;
+                const candidateId = response.data._id;
                 navigate(`/candidates/${candidateId}`);
             })
             .catch((error) => console.log(error));
@@ -121,7 +122,7 @@ function AddEditCandidate(props) {
                     name="lastName"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                />
+                /><br /><br />
 
                 <label>Primary Role:</label>
                 <input
@@ -129,7 +130,7 @@ function AddEditCandidate(props) {
                     name="role"
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
-                />
+                /><br /><br />
 
                 <label>Email:</label>
                 <input
@@ -137,7 +138,7 @@ function AddEditCandidate(props) {
                     name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                />
+                /><br /><br />
 
                 <label>Phone:</label>
                 <input
@@ -145,7 +146,7 @@ function AddEditCandidate(props) {
                     name="phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                />
+                /><br /><br />
 
                 <label>Current Location:</label>
                 <input
@@ -153,7 +154,7 @@ function AddEditCandidate(props) {
                     name="location"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                />
+                /><br /><br />
 
                 <label>About:</label>
                 <textarea
@@ -161,7 +162,7 @@ function AddEditCandidate(props) {
                     name="about"
                     value={about}
                     onChange={(e) => setAbout(e.target.value)}
-                />
+                /><br /><br />
 
                 <label>Skills:</label>
                 <input
@@ -169,7 +170,7 @@ function AddEditCandidate(props) {
                     name="skills"
                     value={skills}
                     onChange={(e) => setSkills(e.target.value)}
-                />
+                /><br /><br />
 
                 <label>Image:</label>
                 <input
@@ -177,7 +178,7 @@ function AddEditCandidate(props) {
                     name="image"
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
-                />
+                /><br /><br />
 
                 <label>LinkedIn Profile Link:</label>
                 <input
@@ -185,7 +186,7 @@ function AddEditCandidate(props) {
                     name="linkedin"
                     value={linkedin}
                     onChange={(e) => setLinkedin(e.target.value)}
-                />
+                /><br /><br />
 
                 <button type="submit">Submit</button>
             </form>
