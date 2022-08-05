@@ -13,8 +13,11 @@ import CandidateDetailsPage from "./pages/CandidateDetails";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import AddEditCandidate from "./components/AddEditCandidate";
+import AddEditCompany from "./components/AddEditCompany";
+
 
 function App() {
+
     return (
         <div className="App">
             <NavBar />
@@ -29,6 +32,8 @@ function App() {
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/myprofile" element={<AddEditCandidate />} />
+                <Route path="/mycompany" element={<AddEditCompany />} />
+
             </Routes>
             <Footer />
         </div>

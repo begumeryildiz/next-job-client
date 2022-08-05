@@ -4,21 +4,30 @@ import { AuthContext } from "../context/auth.context"
 
 function Navbar() {
 
-    const { isLoggedIn, user, logOutUser } = useContext(AuthContext);  
+    const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
     return (
         <nav className="NavBar">
-           <NavLink to="/" >Home</NavLink>  | 
-           <NavLink to="/jobs" >Jobs</NavLink>  | 
-           <NavLink to="/companies" >Companies</NavLink>  | 
-           <NavLink to="/candidates" >Candidates</NavLink>  | 
-          
+            <NavLink to="/" >Home</NavLink>  |
+            <NavLink to="/jobs" >Jobs</NavLink>  |
+            <NavLink to="/companies" >Companies</NavLink>  |
+            <NavLink to="/candidates" >Candidates</NavLink>  |
 
 
-           {isLoggedIn && (
+
+            {isLoggedIn && user.userType === "candidate" && (
                 <>
                     <NavLink to="/myprofile" >My Profile</NavLink>
-                    <span> Hi, {user && user.name}</span> 
+                    <span> Hi, {user && user.name}</span>
+                    &nbsp;
+                    <button onClick={logOutUser}>Logout</button>
+                </>
+            )}
+
+            {isLoggedIn && user.userType === "company" && (
+                <>
+                    <NavLink to="/mycompany" >My Company</NavLink>
+                    <span> Hi, {user && user.name}</span>
                     &nbsp;
                     <button onClick={logOutUser}>Logout</button>
                 </>
@@ -26,7 +35,7 @@ function Navbar() {
 
             {!isLoggedIn && (
                 <>
-                    <NavLink to="/signup">Sign Up</NavLink> | 
+                    <NavLink to="/signup">Sign Up</NavLink> |
                     <NavLink to="/login">Login</NavLink>
                 </>
             )}
