@@ -116,7 +116,7 @@ function AddEditCompany(props) {
                 <button type="submit">Submit</button>
             </form><br /><br />
 
-            <NavLink to="/jobs">
+            <NavLink to="/jobs/create">
                 <button>Add jobs</button>
             </NavLink>
         </div>

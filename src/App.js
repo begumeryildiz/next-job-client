@@ -14,6 +14,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import AddEditCandidate from "./components/AddEditCandidate";
 import AddEditCompany from "./components/AddEditCompany";
+import AddJob from "./components/AddJob";
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/myprofile" element={<AddEditCandidate />} />
                 <Route path="/mycompany" element={<AddEditCompany />} />
-
+                <Route path="/jobs/create" element={<AddJob />} />
             </Routes>
             <Footer />
         </div>

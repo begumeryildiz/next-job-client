@@ -52,7 +52,7 @@ function CompanyDetailsPage(props) {
                 <button>Back to jobs</button>
             </NavLink>
 
-            <NavLink to={`/companies/edit/${companyId}`}>
+            <NavLink to={`/mycompany`}>
                 <button>Edit Company</button>
             </NavLink>
 
