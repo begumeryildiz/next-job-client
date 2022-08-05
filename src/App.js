@@ -15,6 +15,7 @@ import LoginPage from "./pages/LoginPage";
 import AddEditCandidate from "./components/AddEditCandidate";
 import AddEditCompany from "./components/AddEditCompany";
 import AddJob from "./components/AddJob";
+import EditJobPage from "./pages/EditJobPage";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/myprofile" element={<AddEditCandidate />} />
                 <Route path="/mycompany" element={<AddEditCompany />} />
                 <Route path="/jobs/create" element={<AddJob />} />
+                <Route path="/jobs/edit/:jobId" element={<EditJobPage />} />
             </Routes>
             <Footer />
         </div>
