@@ -1,7 +1,7 @@
 //import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context"
-import { Container, Navbar, Nav, Button } from "react-bootstrap";
+import { Container, Navbar, Nav, Button, Image } from "react-bootstrap";
 
 function NavBar() {
 
@@ -10,16 +10,19 @@ function NavBar() {
     return (
         <Navbar className="navbar fw-bold bg-gradient" fixed="sticky" collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container >
+                <Nav.Link href="/">
+                    <Image src="/next-job-logo-white.png" height="30" className=" rounded d-inline-block align-text-top" alt="logo" />
+                </Nav.Link>
                 <Navbar.Brand href="/">NEXT JOB</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link  className="fw-bold" href="/jobs" >Jobs</Nav.Link>
+                        <Nav.Link className="fw-bold" href="/jobs" >Jobs</Nav.Link>
                         <Nav.Link href="/companies" >Companies</Nav.Link>
                         <Nav.Link href="/candidates" >Candidates</Nav.Link>
                     </Nav>
                     <Nav>
-                    {isLoggedIn && (
+                        {isLoggedIn && (
                             <>
                                 {user.userType === "user" && (
                                     <Nav.Link href="/myprofile" >My Profile</Nav.Link>
@@ -31,7 +34,7 @@ function NavBar() {
                                 <Button variant="light" onClick={logOutUser}>Logout</Button>
                             </>
                         )}
-                        
+
 
                         {!isLoggedIn && (
                             <>
@@ -46,10 +49,9 @@ function NavBar() {
     );
 }
 
-export default NavBar; 
+export default NavBar;
 
 
 
-      
-     
-    
+
+
