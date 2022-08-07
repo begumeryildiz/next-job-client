@@ -8,7 +8,7 @@ function NavBar() {
     const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
     return (
-        <Navbar className="navbar fw-bold bg-gradient" fixed="sticky" collapseOnSelect expand="lg" bg="primary" variant="dark">
+        <Navbar  className ="navbar fw-bold bg-gradient" fixed="sticky" collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container >
                 <Nav.Link href="/">
                     <Image src="/next-job-logo-white.png" height="30" className=" rounded d-inline-block align-text-top" alt="logo" />
@@ -18,8 +18,8 @@ function NavBar() {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link className="fw-bold" href="/jobs" >Jobs</Nav.Link>
-                        <Nav.Link href="/companies" >Companies</Nav.Link>
-                        <Nav.Link href="/candidates" >Candidates</Nav.Link>
+                        <Nav.Link className="fw-bold" href="/companies" >Companies</Nav.Link>
+                        <Nav.Link className="fw-bold" href="/candidates" >Candidates</Nav.Link>
                     </Nav>
                     <Nav>
                         {isLoggedIn && (
@@ -38,7 +38,7 @@ function NavBar() {
 
                         {!isLoggedIn && (
                             <>
-                                <Nav.Link href="/signup">Sign Up</Nav.Link> |
+                                <Nav.Link href="/signup">Sign Up</Nav.Link>
                                 <Nav.Link href="/login">Login</Nav.Link>
                             </>
                         )}

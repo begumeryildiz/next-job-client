@@ -26,7 +26,7 @@ function JobsListPage() {
 
         <div className="col">
 
-          <Image src="/jobs-list-header.png" className="shadow-lg background-cover img-fluid fluid mx-auto d-block opacity-50" alt="jobs header" />
+          <Image src="/next-job-header1.png" className="shadow-lg background-cover img-fluid fluid mx-auto d-block opacity-75" alt="jobs header" />
           <div className="carousel-caption "><h1>Hello</h1></div>
 
         </div>
@@ -34,7 +34,7 @@ function JobsListPage() {
       <div className="container">
 
         <div className="my-5">
-          <h2 className="mb-4 fw-bold">Job Listing</h2>
+          <h2 className="mb-4 fw-bold">Job Opportunities</h2>
           <p className=" mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
         </div> <hr />
 
@@ -69,14 +69,14 @@ function JobsListPage() {
         </div><hr/>
       </div>
       <div className="container mt-5">
-        <div className="album my-5 pb-2 px-4 bg-primary bg-opacity-25">
+        <div className="album my-5 pb-2 px-4 bg-primary bg-opacity-25 shadow-lg">
 
           <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4 mb-5">
 
             {jobs.map((job) => {
               return (
                 <div className="col">
-                  <Card >
+                  <Card className="shadow-lg">
                     <Card.Header className="fw-bold" as="h5">{job.title}</Card.Header>
                     <Card.Body>
                       <Card.Title>Company: {job.company.name}</Card.Title>
@@ -89,7 +89,6 @@ function JobsListPage() {
                 </div>
               );
             })}
-
           </div>
         </div>
       </div>
