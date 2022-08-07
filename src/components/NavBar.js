@@ -1,9 +1,10 @@
-//import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context"
 import { Container, Navbar, Nav, Button, Image } from "react-bootstrap";
 
 function NavBar() {
+    let location = useLocation();
 
     const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
@@ -16,7 +17,7 @@ function NavBar() {
                 <Navbar.Brand href="/">NEXT JOB</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
+                    <Nav activeKey={location.pathname} className="me-auto">
                         <Nav.Link className="fw-bold" href="/jobs" >Jobs</Nav.Link>
                         <Nav.Link className="fw-bold" href="/companies" >Companies</Nav.Link>
                         <Nav.Link className="fw-bold" href="/candidates" >Candidates</Nav.Link>

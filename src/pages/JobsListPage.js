@@ -27,7 +27,6 @@ function JobsListPage() {
         <div className="col">
 
           <Image src="/next-job-header1.png" className="shadow-lg background-cover img-fluid fluid mx-auto d-block opacity-75" alt="jobs header" />
-          <div className="carousel-caption "><h1>Hello</h1></div>
 
         </div>
       </header>
@@ -75,7 +74,7 @@ function JobsListPage() {
 
             {jobs.map((job) => {
               return (
-                <div className="col">
+                <div key={job._id} className="col">
                   <Card className="shadow-lg">
                     <Card.Header className="fw-bold" as="h5">{job.title}</Card.Header>
                     <Card.Body>
