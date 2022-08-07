@@ -25,7 +25,7 @@ function CompaniesListPage() {
 
         <div className="col">
 
-          <Image src="/next-job-header2.png" className="shadow-lg background-cover img-fluid fluid mx-auto d-block opacity-80" alt="jobs header" />
+          <Image src="/next-job-header2.png" className="shadow-lg background-cover img-fluid fluid mx-auto d-block opacity-80" alt="companies header" />
 
         </div>
       </header>
