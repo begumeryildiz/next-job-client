@@ -79,6 +79,21 @@ function AddEditCompany(props) {
 
     };
 
+    const deleteCompany = () => {                  
+        // Make a DELETE request to delete the company
+        axios
+        .delete(
+          `${process.env.REACT_APP_API_URL}/companies/${companyId}`, 
+          { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
+          .then(() => {
+            // Once the delete request is resolved successfully
+            navigate("/");
+          })
+          .catch((err) => console.log(err));
+      };  
+      
+
     return (
         <div className="text-center">
 
@@ -135,6 +150,7 @@ function AddEditCompany(props) {
                                     </div>
                                 </div>
                                 <div>
+                                <Button className="bg-gradient text-white px-3 mx-4 mb-4" variant="danger" onClick={deleteCompany}>Delete The Company Profile</Button>
                                     <Button type="submit"
                                         className="bg-gradient text-white px-5 mb-4">Save Changes</Button>
                                 </div>

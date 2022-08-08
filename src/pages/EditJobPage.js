@@ -65,7 +65,7 @@ function EditJobPage(props) {
   )
       .then(() => {
         // Once the delete request is resolved successfully
-        // navigate back to the list of jobs.
+
         navigate("/jobs");
       })
       .catch((err) => console.log(err));
