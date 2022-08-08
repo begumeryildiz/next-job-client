@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context"
-import { Container, Navbar, Nav, Button, Image } from "react-bootstrap";
+import { Container, Navbar, Nav, Image } from "react-bootstrap";
 
 function NavBar() {
     let location = useLocation();

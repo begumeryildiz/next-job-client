@@ -148,9 +148,10 @@ function EditJobPage(props) {
                             </div>
                         </div>
                         <div>
+                        <Button className="bg-gradient text-white px-3 mx-4 mb-4" variant="danger" onClick={deleteJob}>Delete The Job</Button>
                             <Button type="submit"
                                 className="bg-gradient text-white px-5 mb-4">Save Changes</Button>
-                                 <Button className="bg-gradient text-white px-3 mx-4 mb-4" variant="danger" onClick={deleteJob}>Delete The Job</Button>
+                                
                         </div>
 
                     </Form>

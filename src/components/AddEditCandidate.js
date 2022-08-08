@@ -96,13 +96,27 @@ function AddEditCandidate(props) {
                 })
                 .catch((error) => console.log(error));
         }
+    };
 
+    const deleteCandidate = () => {
+        // Make a DELETE request to delete the candidate
+        axios
+            .delete(
+                `${process.env.REACT_APP_API_URL}/candidates/${candidateId}`,
+                { headers: { Authorization: `Bearer ${storedToken}` } }
+            )
+            .then(() => {
+                // Once the delete request is resolved successfully
+                // navigate back to the list of jobs.
+                navigate("/");
+            })
+            .catch((err) => console.log(err));
     };
 
     return (
         <div className="text-center">
 
-            <div className="p-5 bg-image" style={{ backgroundImage: `url(next-job-header3.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize:"cover" }} />
+            <div className="p-5 bg-image" style={{ backgroundImage: `url(next-job-header3.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
 
 
             <div className="card mx-4 mb-3 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
@@ -224,7 +238,7 @@ function AddEditCandidate(props) {
                                         </div>
                                     </div>
                                 </div>
-
+                                <Button className="bg-gradient text-white px-3 mx-4 mb-4" variant="danger" onClick={deleteCandidate}>Delete Your Profile</Button>
                                 <Button type="submit"
                                     className="bg-gradient text-white px-4 mb-4">Save Changes</Button>
                             </Form>
