@@ -12,11 +12,11 @@ function HomePage() {
       </header>
       <div className='container'>
         <div className="row my-2 py-5">
-          <div className="feature col-md-9 fs-1 text-center fw-bold bg-gradient p-3">
-            <h1>Connecting The Right People To The Right Businesses</h1>
+          <div className="feature col-md-9 text-center fw-bold bg-gradient p-3">
+            <h2>Connecting The Right People To The Right Businesses</h2>
           </div>
 
-          <div className="feature col-md-3 text-center p-3">
+          <div className="feature col-md-3 py-3">
             <NavLink to="/signup">
               <Button className="bg-gradient text-white px-5 py-2 mb-4" >Create an Account</Button>
             </NavLink>
@@ -24,7 +24,7 @@ function HomePage() {
           <div className="album my-5 pb-2 px-4">
             <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-3 g-4 ms-1">
               <div className="col my-4" >
-                <Card style={{ width: '18rem' }} className="border-0" >
+                <Card className="border-0" >
                   <Card.Body>
                     <Card.Title>
                       <Image src="/next-job-icon6.png" style={{ height: "65px" }} />
@@ -36,7 +36,7 @@ function HomePage() {
                 </Card>
               </div>
               <div className="col my-4" >
-                <Card style={{ width: '18rem' }} className="border-0" >
+                <Card  className="border-0" >
                   <Card.Body>
                     <Card.Title>
                       <Image src="/next-job-icon4.png" style={{ height: "65px" }} />
@@ -49,7 +49,7 @@ function HomePage() {
                 </Card>
               </div>
               <div className="col my-4" >
-                <Card style={{ width: '18rem' }} className="border-0" >
+                <Card className="border-0" >
                   <Card.Body>
                     <Card.Title>
                       <Image src="/next-job-icon5.png" style={{ height: "65px" }} />
