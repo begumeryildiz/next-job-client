@@ -96,7 +96,7 @@ function SignupPage(props) {
                                         </div>
 
                                         <div className="pt-1 mb-4">
-                                            <Button className="btn btn-primary bg-gradient btn-lg w-100" type="submit">Register</Button>
+                                            <Button className="bg-gradient btn-lg w-100" type="submit">Register</Button>
                                         </div>
                                         <p className="mb-4 pb-lg-2">Already have an account? Click
                                             <NavLink to={"/login"}> Login</NavLink> to login.</p>

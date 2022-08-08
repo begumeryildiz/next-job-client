@@ -226,7 +226,7 @@ function AddEditCandidate(props) {
                                 </div>
 
                                 <Button type="submit"
-                                    className="btn bg-primary bg-gradient btn-outline-light btn-rounded text-white px-4 btn-block mb-4">Save Changes</Button>
+                                    className="bg-gradient text-white px-4 mb-4">Save Changes</Button>
                             </Form>
                         </div>
                     </div>

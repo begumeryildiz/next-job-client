@@ -51,7 +51,7 @@ function CompaniesListPage() {
                       <Card.Text>
                         {company.address}
                       </Card.Text>
-                      <Button variant="primary"><NavLink to={`/companies/${company._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>
+                      <Button className="bg-gradient" variant="primary"><NavLink to={`/companies/${company._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>
                     </Card.Body>
                   </Card>
                 </div>

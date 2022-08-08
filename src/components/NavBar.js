@@ -32,7 +32,7 @@ function NavBar() {
                                     <Nav.Link href="/mycompany" >My Company</Nav.Link>
                                 )}
                                 <div className="text-white my-2 mx-2 px-2">{user && user.name}</div>
-                                <Button variant="light" onClick={logOutUser}>Logout</Button>
+                                <Button className="bg-gradient" variant="light" onClick={logOutUser}>Logout</Button>
                             </>
                         )}
 

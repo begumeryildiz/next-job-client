@@ -135,13 +135,13 @@ function AddEditCompany(props) {
                                     </div>
                                 </div>
                                 <div>
-                                <Button  type="submit"
-                                    className="btn bg-primary bg-gradient btn-outline-light btn-rounded text-white px-5 btn-block mb-4">Save Changes</Button>
+                                    <Button type="submit"
+                                        className="bg-gradient text-white px-5 mb-4">Save Changes</Button>
                                 </div>
                                 <div>
-                                <NavLink to="/jobs/create">
-                                    <Button className="px-5">Add jobs</Button>
-                                </NavLink>
+                                    <NavLink to="/jobs/create">
+                                        <Button className="px-5 text-white bg-gradient">Add jobs</Button>
+                                    </NavLink>
                                 </div>
                             </Form>
                         </div>

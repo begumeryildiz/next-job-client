@@ -52,7 +52,7 @@ function CandidatesListPage() {
                     <Card.Text>
                       {candidate.role}
                     </Card.Text>
-                    <Button variant="primary"><NavLink to={`/candidates/${candidate._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>
+                    <Button className="bg-gradient" variant="primary"><NavLink to={`/candidates/${candidate._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>
                   </Card.Body>
                 </Card>
               </div>

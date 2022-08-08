@@ -86,7 +86,7 @@ function LoginPage(props) {
 
 
                                             <div className="pt-1 mb-4">
-                                                <Button className="btn btn-primary bg-gradient btn-lg w-100" type="submit">Login</Button>
+                                                <Button className="bg-gradient btn-lg w-100" type="submit">Login</Button>
                                             </div>
                                             <p className="mb-5 pb-lg-2" >Don't have an account?
                                                 <NavLink to={"/login"}> Register here</NavLink></p>
