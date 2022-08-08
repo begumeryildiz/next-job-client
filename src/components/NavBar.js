@@ -1,12 +1,19 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context"
 import { Container, Navbar, Nav, Button, Image } from "react-bootstrap";
 
 function NavBar() {
     let location = useLocation();
-
+    const navigate = useNavigate();
     const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+
+    const logOutAndNavigate = () => {
+        logOutUser();
+        navigate("/");
+    }
+
+   
 
     return (
         <Navbar  className ="navbar fw-bold bg-gradient" fixed="sticky" collapseOnSelect expand="lg" bg="primary" variant="dark">
@@ -32,7 +39,7 @@ function NavBar() {
                                     <Nav.Link href="/mycompany" >My Company</Nav.Link>
                                 )}
                                 <div className="text-white my-2 mx-2 px-2">{user && user.name}</div>
-                                <Button className="bg-gradient" variant="light" onClick={logOutUser}>Logout</Button>
+                                <Nav.Link onClick={logOutAndNavigate}>Logout</Nav.Link>
                             </>
                         )}
 

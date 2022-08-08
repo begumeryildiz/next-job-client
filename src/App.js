@@ -21,7 +21,7 @@ import EditJobPage from "./pages/EditJobPage";
 function App() {
 
     return (
-        <div className="App">
+        <div className="App min-vh-100">
             <NavBar />
             <Routes>
                 <Route path="/" element={<HomePage />} />
