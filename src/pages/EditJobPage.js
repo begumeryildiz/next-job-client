@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { Button, Form } from 'react-bootstrap';
 
 
 function EditJobPage(props) {
@@ -71,54 +72,93 @@ function EditJobPage(props) {
   };  
   
   return (
-    <div className="EditJobPage">
-      <h3>Edit the Job</h3>
+    <div className="text-center">
 
-      <form onSubmit={handleFormSubmit}>
-                <label>Title:</label>
-                <input
-                    type="text"
-                    name="title"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                /><br /><br />
+    <div className="p-5 bg-image" style={{ backgroundImage: `url(/next-job-header4.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
 
-                <label>Company:</label>
-                <input
-                    type="text"
-                    name="company"
-                    value={company}
-                    disabled
-                /><br /><br />
 
-                <label>Description:</label>
-                <textarea
-                    type="text"
-                    name="description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                /><br /><br />
+    <div className="card mx-4 mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
+        <div className="card-body py-5 px-md-5">
 
-                <label>Skills:</label>
-                <input
-                    type="text"
-                    name="skills"
-                    value={skills}
-                    onChange={(e) => setSkills(e.target.value)}
-                /><br /><br />
+            <div className="row d-flex justify-content-center">
+                <div className="col-lg-8">
+                    <h2 className="fw-bold mb-4">Edit The Job Opportunity</h2>
+                    
+                    <Form onSubmit={handleFormSubmit}>
+                        <div className="row">
+                            <div className="form-outline mb-4">
+                                <div className="form-outline">
+                                    <label className="form-label">Job Title</label>
+                                    <input type="text"
+                                        name="title"
+                                        value={title}
+                                        onChange={(e) => setTitle(e.target.value)} className="form-control" required />
+                                </div>
+                            </div>
+                        </div>
 
-                <label>Level:</label>
-                <input
-                    type="text"
-                    name="level"
-                    value={level}
-                    onChange={(e) => setLevel(e.target.value)}
-                /><br /><br />
+                        <div className="row">
+                            <div className="form-outline mb-4">
+                                <div className="form-outline">
+                                    <label className="form-label">Company Name</label>
+                                    <input type="text"
+                                        name="company"
+                                        value={company}
+                                        disabled className="form-control" />
+                                </div>
+                            </div>
+                        </div>
 
-                <button type="submit">Submit</button>
-            </form><br />
-      <button onClick={deleteJob}>Delete Job</button>
-    </div>
+                        <div className="row">
+                            <div className="form-outline mb-4">
+                                <div className="form-outline">
+                                    <label className="form-label">Job Description</label>
+                                    <textarea
+                                        type="text"
+                                        name="description"
+                                        value={description}
+                                        onChange={(e) => setDescription(e.target.value)} cols="30" rows="4" className="form-control" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="form-outline mb-4">
+                                <div className="form-outline">
+                                    <label className="form-label">Required Skills</label>
+                                    <input
+                                        type="text"
+                                        name="skills"
+                                        value={skills}
+                                        onChange={(e) => setSkills(e.target.value)} className="form-control" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="form-outline mb-4">
+                                <div className="form-outline">
+                                    <label className="form-label">Level</label>
+                                    <input
+                                        type="text"
+                                        name="level"
+                                        value={level}
+                                        onChange={(e) => setLevel(e.target.value)} className="form-control" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <Button type="submit"
+                                className="bg-gradient text-white px-5 mb-4">Save Changes</Button>
+                                 <Button className="bg-gradient text-white px-3 mx-4 mb-4" variant="danger" onClick={deleteJob}>Delete The Job</Button>
+                        </div>
+
+                    </Form>
+                </div>
+            </div>
+        </div>
+    </div >
+</div >
   );
 }
 

@@ -61,7 +61,7 @@ function AddJob(props) {
     return (
         <div className="text-center">
 
-            <div className="p-5 bg-image" style={{ backgroundImage: `url(next-job-header1.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
+            <div className="p-5 bg-image" style={{ backgroundImage: `url(/next-job-header4.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
 
 
             <div className="card mx-4 mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
