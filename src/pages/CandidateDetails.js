@@ -28,7 +28,7 @@ function CandidateDetailsPage(props) {
 
     return (
         <div className="CandidateDetails">
-            <div className="p-5 bg-image" style={{ backgroundImage: `url(/next-job-header4.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
+            <div className="p-5 bg-image" style={{ backgroundImage: `url(/next-job-header5.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
             {candidate && (
                 <div className="mx-5">
                     <div className="card mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>

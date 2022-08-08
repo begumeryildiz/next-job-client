@@ -39,25 +39,26 @@ function CandidatesListPage() {
       <div className="container mt-5">
         <div className="album my-5 pb-2 px-4 bg-primary bg-opacity-25 shadow-lg">
 
-          <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4 mb-5"></div>
+          <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4 mb-5">
 
-          {candidates.map((candidate) => {
-            return (
-              <div className="Candidates col" key={candidate._id} >
-                <Card style={{ width: '18rem' }} className="shadow-lg" >
-                <Card.Img variant="top" className="rounded-circle rounded m-auto" style={{ width: '120px' }} src={candidate.image} />
-                  <Card.Header className="fw-bold" as="h5">{candidate.firstName} {candidate.lastName}</Card.Header>
-                  <Card.Body>
-                    <Card.Title>Primary Role: { }</Card.Title>
-                    <Card.Text>
-                      {candidate.role}
-                    </Card.Text>
-                    <Button className="bg-gradient" variant="primary"><NavLink to={`/candidates/${candidate._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>
-                  </Card.Body>
-                </Card>
-              </div>
-            );
-          })}
+            {candidates.map((candidate) => {
+              return (
+                <div className="Candidates col" key={candidate._id} >
+                  <Card style={{ width: '18rem' }} className="shadow-lg" >
+                    <Card.Img variant="top" className="rounded-circle rounded m-auto" style={{ width: '120px' }} src={candidate.image} />
+                    <Card.Header className="fw-bold" as="h5">{candidate.firstName} {candidate.lastName}</Card.Header>
+                    <Card.Body>
+                      <Card.Title>Primary Role:</Card.Title>
+                      <Card.Text>
+                        {candidate.role}
+                      </Card.Text>
+                      <Button className="bg-gradient" variant="primary"><NavLink to={`/candidates/${candidate._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>
+                    </Card.Body>
+                  </Card>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

@@ -28,12 +28,12 @@ function JobDetailsPage(props) {
 
     return (
         <div className="JobDetails">
-            <div className="p-5 bg-image" style={{ backgroundImage: `url(/next-job-header4.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
+            <div className="p-5 bg-image" style={{ backgroundImage: `url(/next-job-header5.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
             {job && (
                 <div className="mx-5">
                     <div className="card mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-75px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
                         <div className="my-5 py-4">
-                            <div className="container my-5 dark-grey-text mt-2 px-4 bg-light bg-opacity-25">
+                            <div className="container my-5 mt-2 px-4 bg-light bg-opacity-25">
                                 <div className="text-center col">
                                     <div className="p-4">
                                         <div className="mb-3">
@@ -50,7 +50,7 @@ function JobDetailsPage(props) {
                                 </div>
                                 <div className="my-4">
                                     <NavLink className="mx-4" to="/jobs">
-                                        <Button className="bg-gradient text-white px-5 mb-4">Back to Jobs</Button>
+                                        <Button className="bg-gradient  text-white px-5 mb-4">Back to Jobs</Button>
                                     </NavLink>
 
                                     <NavLink to={`/jobs/edit/${jobId}`}>
