@@ -31,7 +31,7 @@ function CandidateDetailsPage(props) {
             <div className="p-5 bg-image" style={{ backgroundImage: `url(/next-job-header4.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
             {candidate && (
                 <div className="mx-5">
-                     <div className="card mx-5 mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
+                    <div className="card mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
                         <div className="my-5 py-4">
                             <div className="container dark-grey-text mt-2 px-4 bg-light bg-opacity-25">
                                 <div className="row wow fadeIn">
@@ -47,11 +47,11 @@ function CandidateDetailsPage(props) {
                                                 <p><strong>Primary Role:</strong> {candidate.role}</p>
 
                                                 <p><strong>Skills:</strong> {candidate.skills}</p>
-                                                <p><strong>{candidate.firstName} {candidate.lastName}'s</strong> <Link to={candidate.linkedin} >LinkedIn Profile</Link> <br /><br /></p>
+                                                <p><strong>{candidate.firstName} {candidate.lastName}'s </strong> <Link to={candidate.linkedin} > LinkedIn Profile</Link></p>
                                             </div>
                                         </div>
                                     </div>
-                                  
+
 
                                     <div className="text-start col-md-4 pt-5">
                                         <div className="p-4">
@@ -74,12 +74,12 @@ function CandidateDetailsPage(props) {
                                         <p>{candidate.about}</p>
 
                                     </div>
-                                    
+
 
 
                                     <div className="my-4">
                                         <NavLink to="/candidates">
-                                            <Button >Back to candidates</Button>
+                                            <Button className="bg-gradient text-white px-5 mb-4" >Back to Candidates</Button>
                                         </NavLink>
                                     </div>
 
@@ -88,9 +88,9 @@ function CandidateDetailsPage(props) {
                         </div>
                     </div>
                 </div>
-        
-    )
-}
+
+            )
+            }
         </div >
     )
 }
