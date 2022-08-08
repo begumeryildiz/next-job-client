@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
+import { Button, Form } from 'react-bootstrap';
 
 
 function AddEditCompany(props) {
@@ -79,48 +80,76 @@ function AddEditCompany(props) {
     };
 
     return (
-        <div className="AddCompany">
-            <h3>Company Profile</h3>
+        <div className="text-center">
 
-            {errorMsg &&
-                <p className="error">
-                    {errorMsg}
-                </p>
-            }
+            <div class="p-5 bg-image" style={{ backgroundImage: `url(next-job-header2.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
 
-            <form onSubmit={handleSubmit}>
-                <label>Company Name:</label>
-                <input
-                    type="text"
-                    name="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                /><br /><br />
 
-                <label>Description:</label>
-                <textarea
-                    type="text"
-                    name="description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                /><br /><br />
+            <div className="card mx-4 mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
+                <div className="card-body py-5 px-md-5">
 
-                <label>Company Location:</label>
-                <input
-                    type="text"
-                    name="address"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                /><br /><br />
+                    <div className="row d-flex justify-content-center">
+                        <div className="col-lg-8">
+                            <h2 className="fw-bold mb-4">Company Profile</h2>
+                            {errorMsg &&
+                                <p classNameName="error">
+                                    {errorMsg}
+                                </p>
+                            }
+                            <Form onSubmit={handleSubmit}>
+                                <div className="row">
+                                    <div className="form-outline mb-4">
+                                        <div className="form-outline">
+                                            <label className="form-label">Company Name</label>
+                                            <input type="text"
+                                                name="name"
+                                                value={name}
+                                                onChange={(e) => setName(e.target.value)} className="form-control" required />
+                                        </div>
+                                    </div>
+                                </div>
 
-                <button type="submit">Submit</button>
-            </form><br /><br />
+                                <div className="row">
+                                    <div className="form-outline mb-4">
+                                        <div className="form-outline">
+                                            <label className="form-label">Company Description</label>
+                                            <textarea
+                                                type="text"
+                                                name="description"
+                                                value={description}
+                                                onChange={(e) => setDescription(e.target.value)} cols="30" rows="6" className="form-control" required />
+                                        </div>
+                                    </div>
+                                </div>
 
-            <NavLink to="/jobs/create">
-                <button>Add jobs</button>
-            </NavLink>
-        </div>
-    );
+                                <div className="row">
+                                    <div className="form-outline mb-4">
+                                        <div className="form-outline">
+                                            <label className="form-label">Company Location</label>
+                                            <input
+                                                type="text"
+                                                name="address"
+                                                value={address}
+                                                onChange={(e) => setAddress(e.target.value)} className="form-control" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                <Button  type="submit"
+                                    className="btn bg-primary bg-gradient btn-outline-light btn-rounded text-white px-5 btn-block mb-4">Save Changes</Button>
+                                </div>
+                                <div>
+                                <NavLink to="/jobs/create">
+                                    <Button className="px-5">Add jobs</Button>
+                                </NavLink>
+                                </div>
+                            </Form>
+                        </div>
+                    </div>
+                </div>
+            </div >
+        </div >
+    )
 }
 
 export default AddEditCompany;
