@@ -102,7 +102,7 @@ function AddEditCandidate(props) {
     return (
         <div className="text-center">
 
-            <div class="p-5 bg-image" style={{ backgroundImage: `url(next-job-header3.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize:"cover" }} />
+            <div className="p-5 bg-image" style={{ backgroundImage: `url(next-job-header3.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize:"cover" }} />
 
 
             <div className="card mx-4 mb-3 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
