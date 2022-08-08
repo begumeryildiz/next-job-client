@@ -12,11 +12,11 @@ function HomePage() {
       </header>
       <div className='container'>
         <div className="row my-2 py-5">
-          <div class="feature col-md-9 fs-1 text-center fw-bold bg-gradient p-3">
+          <div className="feature col-md-9 fs-1 text-center fw-bold bg-gradient p-3">
             <h1>Connecting The Right People To The Right Businesses</h1>
           </div>
 
-          <div class="feature col-md-3 text-center p-3">
+          <div className="feature col-md-3 text-center p-3">
             <NavLink to="/signup">
               <Button className="bg-gradient text-white px-5 py-2 mb-4" >Create an Account</Button>
             </NavLink>

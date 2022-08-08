@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
+import { Card, Button } from 'react-bootstrap';
 
 
 function CompanyDetailsPage(props) {
@@ -21,41 +22,74 @@ function CompanyDetailsPage(props) {
 
     useEffect(() => {
         getCompany();
-    // eslint-disable-next-line
+        // eslint-disable-next-line
     }, []);
 
 
     return (
         <div className="CompanyDetails">
+            <div className="p-5 bg-image" style={{ backgroundImage: `url(/next-job-header5.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
             {company && (
-                <>
-                    <h1>{company.title}</h1>
-                    <p>Description: {company.description}</p>
-                    <p>Address: {company.address}</p>
-                </>
+                <div className="mx-5">
+                    <div className="card mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-75px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
+                        <div className=" py-4">
+                           
+                                <div className="text-center col">
+                                    <div className="p-4">
+                                        <div className="mb-3">
+                                            <h2>{company.name}</h2>
+                                        </div>
+                                        <div className="lead">
+                                            <p><strong>Company Location:</strong> {company.address}</p>
+                                            <p className="lead font-weight-bold"><strong>Company Description:</strong></p>
+                                            <p>{company.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="mt-4">
+                                    <NavLink className="mx-2" to="/companies">
+                                        <Button className="bg-gradient text-white px-5 mb-4">Back to Companies</Button>
+                                    </NavLink>
+
+                                    <NavLink className="mx-2" to="/jobs">
+                                        <Button className="bg-gradient text-white px-5 mb-4">Back to Jobs</Button>
+                                    </NavLink>
+
+                                    <NavLink className="mx-2" to={`/mycompany`}>
+                                        <Button className="bg-gradient text-white px-5 mb-4">Edit Company Details</Button>
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+           
             )}
 
-            {company &&
-                company.jobs.map((job) => (
-                    <li className="JobsCard card" key={job._id}>
-                        <h3>{job.title}</h3>
-                        <h4>Description:</h4>
-                        <p>{job.description}</p>
-                    </li>
-                ))}
+            <div className="container mt-5">
+                <div className="album my-5 pb-2 px-4 bg-primary bg-opacity-25 shadow-lg">
 
-            <NavLink to="/companies">
-                <button>Back to companies</button>
-            </NavLink>
+                    <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4 mb-5">
 
-            <NavLink to="/jobs">
-                <button>Back to jobs</button>
-            </NavLink>
 
-            <NavLink to={`/mycompany`}>
-                <button>Edit Company</button>
-            </NavLink>
+                        {company &&
+                            company.jobs.map((job) => (
+                                <div key={job._id} className="col">
+                                    <Card className="shadow-lg">
+                                        <Card.Header className="fw-bold" as="h5">{job.title}</Card.Header>
+                                        <Card.Body>
+                                            <Card.Title>Level: {job.level}</Card.Title>
+                                            <Card.Text>
+                                                Skills: {job.skills}
+                                            </Card.Text>
+                                            <Button className="bg-gradient" variant="primary"><NavLink to={`/jobs/${job._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>
+                                        </Card.Body>
+                                    </Card>
 
+                                </div>
+                            ))}
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
