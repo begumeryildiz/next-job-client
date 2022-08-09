@@ -5,6 +5,7 @@ import { Button, Form } from 'react-bootstrap';
 
 
 
+
 function AddEditCandidate(props) {
     const [candidateId, setCandidateId] = useState("");
     const [firstName, setFirstName] = useState("");
@@ -22,6 +23,28 @@ function AddEditCandidate(props) {
     const navigate = useNavigate();
 
     const storedToken = localStorage.getItem("authToken");
+
+
+    const handleFileUpload = (e) => {
+        // console.log("The file to be uploaded is: ", e.target.files[0]);
+
+        const uploadData = new FormData();
+
+        // imageUrl => this name has to be the same as in the model since we pass
+        // req.body to .create() method when creating a new movie in '/api/movies' POST route
+        uploadData.append("image", e.target.files[0]);
+
+        axios
+            .post(`${process.env.REACT_APP_API_URL}/upload`, uploadData,
+                { headers: { Authorization: `Bearer ${storedToken}` } })
+            .then(response => {
+                // console.log("response is: ", response);
+                // response carries "fileUrl" which we can use to update the state
+                setImage(response.data.fileUrl);
+            })
+            .catch(err => console.log("Error while uploading the file: ", err));
+    };
+
 
     const getCandidate = () => {
         axios
@@ -58,16 +81,16 @@ function AddEditCandidate(props) {
         setErrorMsg("");
 
         const requestBody = {
-            firstName,
-            lastName,
-            role,
-            email,
-            phone,
-            location,
-            about,
-            skills,
-            image,
-            linkedin
+            firstName: firstName,
+            lastName: lastName,
+            role: role,
+            email: email,
+            phone: phone,
+            location: location,
+            about: about,
+            skills: skills,
+            image: image,
+            linkedin: linkedin
         }
 
         if (candidateId === "") {
@@ -155,10 +178,10 @@ function AddEditCandidate(props) {
                                     <div className="form-outline mb-4">
                                         <div className="form-outline">
                                             <label className="form-label">Profile Picture</label>
-                                            <input type="text"
+                                            <input type="file"
                                                 name="image"
-                                                value={image}
-                                                onChange={(e) => setImage(e.target.value)} className="form-control-file form-control"
+                                            
+                                                onChange={(e) => handleFileUpload(e)} className="form-control-file form-control"
                                                 accept="image/png, image/jpeg, image/jpg" required />
                                         </div>
                                     </div>
