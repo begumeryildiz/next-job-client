@@ -108,7 +108,7 @@ function AddJob(props) {
                                                 type="text"
                                                 name="description"
                                                 value={description}
-                                                onChange={(e) => setDescription(e.target.value)} cols="30" rows="4" className="form-control" required />
+                                                onChange={(e) => setDescription(e.target.value)} cols="30" rows="4" wrap="hard" className="form-control" required />
                                         </div>
                                     </div>
                                 </div>

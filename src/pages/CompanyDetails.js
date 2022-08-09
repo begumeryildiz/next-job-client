@@ -46,7 +46,7 @@ function CompanyDetailsPage(props) {
                                         <div className="lead">
                                             <p><strong>Company Location:</strong> {company.address}</p>
                                             <p className="lead font-weight-bold"><strong>Company Description:</strong></p>
-                                            <p>{company.description}</p>
+                                            <p style={{whiteSpace: 'pre-wrap'}}>{company.description}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -57,10 +57,6 @@ function CompanyDetailsPage(props) {
 
                                     <NavLink className="mx-2" to="/jobs">
                                         <Button className="bg-gradient text-white px-5 mb-4">Back to Jobs</Button>
-                                    </NavLink>
-
-                                    <NavLink className="mx-2" to={`/mycompany`}>
-                                        <Button className="bg-gradient text-white px-5 mb-4">Edit Company Details</Button>
                                     </NavLink>
                                 </div>
                             </div>

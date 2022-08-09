@@ -53,7 +53,7 @@ function JobDetailsPage(props) {
                                         <p><strong>Level:</strong> {job.level}</p>
                                         <p><strong>Skills:</strong> {job.skills}</p>
                                         <p className="lead font-weight-bold"><strong>Job Description:</strong></p>
-                                        <p>{job.description}</p>
+                                        <p style={{whiteSpace: 'pre-wrap'}}>{job.description}</p>
                                     </div>
                                 </div>
                             </div>

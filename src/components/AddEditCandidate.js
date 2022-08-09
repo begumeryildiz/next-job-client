@@ -222,7 +222,7 @@ function AddEditCandidate(props) {
                                             <textarea type="text"
                                                 name="about"
                                                 value={about}
-                                                onChange={(e) => setAbout(e.target.value)} cols="30" rows="4" className="form-control" required></textarea>
+                                                onChange={(e) => setAbout(e.target.value)} cols="30" rows="4" wrap="hard" className="form-control" required></textarea>
                                         </div>
                                     </div>
                                 </div>

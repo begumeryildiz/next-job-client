@@ -75,7 +75,7 @@ function CandidateDetailsPage(props) {
                                     <div className="text-start col-md-8 mb-4 ps-4">
 
                                         <p className="lead font-weight-bold"><strong>About:</strong></p>
-                                        <p>{candidate.about}</p>
+                                        <p style={{whiteSpace: 'pre-wrap'}}>{candidate.about}</p>
 
                                     </div>
 

@@ -71,6 +71,7 @@ function AddEditCompany(props) {
                     { headers: { Authorization: `Bearer ${storedToken}` } }
                 )
                 .then((response) => {
+                    console.log(response)
                     const companyId = response.data._id;
                     navigate(`/companies/${companyId}`);
                 })
@@ -132,7 +133,7 @@ function AddEditCompany(props) {
                                                 type="text"
                                                 name="description"
                                                 value={description}
-                                                onChange={(e) => setDescription(e.target.value)} cols="30" rows="6" className="form-control" required />
+                                                onChange={(e) => setDescription(e.target.value)} cols="30" rows="6" wrap="hard" className="form-control" required />
                                         </div>
                                     </div>
                                 </div>
