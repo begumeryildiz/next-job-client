@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { Button } from 'react-bootstrap';
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context"
 
 
 function JobDetailsPage(props) {
@@ -10,6 +12,9 @@ function JobDetailsPage(props) {
     const { jobId } = useParams();
 
     const storedToken = localStorage.getItem("authToken");
+
+    const { user } = useContext(AuthContext);
+    const isOwner = (obj) => (typeof(user) !== 'undefined' && obj.owner === user._id)
 
 
     const getJob = () => {
@@ -57,9 +62,9 @@ function JobDetailsPage(props) {
                                     <Button className="bg-gradient  text-white px-5 mb-4">Back to Jobs</Button>
                                 </NavLink>
 
-                                <NavLink to={`/jobs/edit/${jobId}`}>
+                                {isOwner(job) && <NavLink to={`/jobs/edit/${jobId}`}>
                                     <Button className="bg-gradient text-white px-5 mb-4">Edit Job</Button>
-                                </NavLink>
+                                </NavLink>}
                             </div>
 
                         </div>

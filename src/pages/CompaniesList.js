@@ -7,16 +7,21 @@ import { Card, Button, Image } from 'react-bootstrap';
 function CompaniesListPage() {
   const [companies, setCompanies] = useState([]);
 
+  const storedToken = localStorage.getItem("authToken");
+
   const getAllCompanies = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/companies`)
+      .get(`${process.env.REACT_APP_API_URL}/companies`,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
       .then((response) => setCompanies(response.data))
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
     getAllCompanies();
-  }, []);
+    // eslint-disable-next-line
+  }, [storedToken]);
 
 
   return (

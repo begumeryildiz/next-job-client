@@ -19,7 +19,9 @@ function EditJobPage(props) {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/jobs/${jobId}`)
+      .get(`${process.env.REACT_APP_API_URL}/jobs/${jobId}`,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
       .then((response) => {
         const oneJob = response.data;
         setTitle(oneJob.title);
@@ -30,7 +32,7 @@ function EditJobPage(props) {
       })
       .catch((error) => console.log(error));
     
-  }, [jobId]);
+  }, [jobId, storedToken]);
   
   const handleFormSubmit = (e) => {                     
     e.preventDefault();

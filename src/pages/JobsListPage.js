@@ -7,16 +7,21 @@ import { Card, Button, Image } from 'react-bootstrap';
 function JobsListPage() {
   const [jobs, setJobs] = useState([]);
 
+  const storedToken = localStorage.getItem("authToken");
+
   const getAllJobs = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/jobs`)
+      .get(`${process.env.REACT_APP_API_URL}/jobs`,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
       .then((response) => setJobs(response.data))
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
     getAllJobs();
-  }, []);
+    // eslint-disable-next-line
+  }, [storedToken]);
 
 
 

@@ -7,16 +7,21 @@ import { Card, Button, Image } from 'react-bootstrap';
 function CandidatesListPage() {
   const [candidates, setCandidates] = useState([]);
 
+  const storedToken = localStorage.getItem("authToken");
+
   const getAllCandidates = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/candidates`)
+      .get(`${process.env.REACT_APP_API_URL}/candidates`,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
       .then((response) => setCandidates(response.data))
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
     getAllCandidates();
-  }, []);
+    // eslint-disable-next-line
+  }, [storedToken]);
 
 
   return (
