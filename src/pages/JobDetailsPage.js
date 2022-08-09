@@ -8,19 +8,20 @@ import { AuthContext } from "../context/auth.context"
 
 function JobDetailsPage(props) {
     const [job, setJob] = useState(null);
+    const [message, setMessage] = useState("")
     // Get the URL parameter `:jobId` 
     const { jobId } = useParams();
 
     const storedToken = localStorage.getItem("authToken");
 
     const { user } = useContext(AuthContext);
-    const isOwner = (obj) => (typeof(user) !== 'undefined' && obj.owner === user._id)
+    const isOwner = (obj) => (typeof (user) !== 'undefined' && obj.owner === user._id)
 
 
     const getJob = () => {
         axios
             .get(`${process.env.REACT_APP_API_URL}/jobs/${jobId}`,
-            { headers: { Authorization: `Bearer ${storedToken}` } }
+                { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {
                 const oneJob = response.data;
@@ -28,6 +29,22 @@ function JobDetailsPage(props) {
             })
             .catch((error) => console.log(error));
     };
+
+    const applyJob = () => {
+        setMessage("");
+        axios
+            .post(`${process.env.REACT_APP_API_URL}/apply/${jobId}`, {},
+                { headers: { Authorization: `Bearer ${storedToken}` } }
+            )
+            .then((response) => {
+                setMessage(response.data.message);
+            })
+            .catch((error) => {
+                setMessage("An error occurred");
+                console.log(error);
+            });
+    };
+
 
     useEffect(() => {
         getJob();
@@ -53,7 +70,16 @@ function JobDetailsPage(props) {
                                         <p><strong>Level:</strong> {job.level}</p>
                                         <p><strong>Skills:</strong> {job.skills}</p>
                                         <p className="lead font-weight-bold"><strong>Job Description:</strong></p>
-                                        <p style={{whiteSpace: 'pre-wrap'}}>{job.description}</p>
+                                        <p style={{ whiteSpace: 'pre-wrap' }}>{job.description}</p>
+                                        {isOwner(job) && 
+                                        <div>
+                                            <p><strong>Applicants:</strong></p>
+                                            <ul>
+                                                {job.applicants.map((applicant) => {
+                                                    return (<li key={applicant._id}>{applicant.firstName+" "+applicant.lastName}</li>)
+                                                })}
+                                            </ul>
+                                        </div>}
                                     </div>
                                 </div>
                             </div>
@@ -62,11 +88,15 @@ function JobDetailsPage(props) {
                                     <Button className="bg-gradient  text-white px-5 mb-4">Back to Jobs</Button>
                                 </NavLink>
 
+                                {user.userType === "candidate" &&
+                                    <Button className="bg-gradient btn-info fw-bold text-white px-5 mb-4" onClick={applyJob}>Apply the Job</Button>}
+
+
                                 {isOwner(job) && <NavLink to={`/jobs/edit/${jobId}`}>
                                     <Button className="bg-gradient text-white px-5 mb-4">Edit Job</Button>
                                 </NavLink>}
                             </div>
-
+                            <p>{message}</p>
                         </div>
                     </div>
                 </div>
