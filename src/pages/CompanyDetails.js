@@ -9,10 +9,14 @@ function CompanyDetailsPage(props) {
     // Get the URL parameter `:companyId` 
     const { companyId } = useParams();
 
+    const storedToken = localStorage.getItem("authToken");
+
 
     const getCompany = () => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}/companies/${companyId}`)
+            .get(`${process.env.REACT_APP_API_URL}/companies/${companyId}`,
+            { headers: { Authorization: `Bearer ${storedToken}` } }
+            )
             .then((response) => {
                 const oneCompany = response.data;
                 setCompany(oneCompany);

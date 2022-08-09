@@ -9,10 +9,14 @@ function JobDetailsPage(props) {
     // Get the URL parameter `:jobId` 
     const { jobId } = useParams();
 
+    const storedToken = localStorage.getItem("authToken");
+
 
     const getJob = () => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}/jobs/${jobId}`)
+            .get(`${process.env.REACT_APP_API_URL}/jobs/${jobId}`,
+            { headers: { Authorization: `Bearer ${storedToken}` } }
+            )
             .then((response) => {
                 const oneJob = response.data;
                 setJob(oneJob);
