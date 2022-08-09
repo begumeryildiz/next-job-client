@@ -32,7 +32,7 @@ function NavBar() {
                     <Nav>
                         {isLoggedIn && (
                             <>
-                                {user.userType === "user" && (
+                                {user.userType === "candidate" && (
                                     <Nav.Link href="/myprofile" >My Profile</Nav.Link>
                                 )}
                                 {user.userType === "company" && (
