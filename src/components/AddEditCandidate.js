@@ -202,7 +202,7 @@ function AddEditCandidate(props) {
                                             <input type="text"
                                                 name="phone"
                                                 value={phone}
-                                                onChange={(e) => setPhone(e.target.value)} className="form-control" required />
+                                                onChange={(e) => setPhone(e.target.value)} className="form-control" />
                                         </div>
                                     </div>
                                     <div className="col-md-4 mb-4">
@@ -211,7 +211,7 @@ function AddEditCandidate(props) {
                                             <input type="text"
                                                 name="location"
                                                 value={location}
-                                                onChange={(e) => setLocation(e.target.value)} className="form-control" required />
+                                                onChange={(e) => setLocation(e.target.value)} className="form-control" />
                                         </div>
                                     </div>
                                 </div>
