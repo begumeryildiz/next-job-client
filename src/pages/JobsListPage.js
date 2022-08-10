@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import { Card, Button, Image } from 'react-bootstrap';
+import { Card, Button, Image, Form } from 'react-bootstrap';
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context"
 
 
 function JobsListPage() {
   const [jobs, setJobs] = useState([]);
+  const [query, setQuery] = useState("");
 
   const storedToken = localStorage.getItem("authToken");
   const { isLoggedIn } = useContext(AuthContext);
@@ -15,7 +16,7 @@ function JobsListPage() {
   const getAllJobs = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/jobs`,
-      { headers: { Authorization: `Bearer ${storedToken}` } }
+        { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => setJobs(response.data))
       .catch((error) => console.log(error));
@@ -26,7 +27,16 @@ function JobsListPage() {
     // eslint-disable-next-line
   }, [storedToken]);
 
-
+  const searchJob = () => {
+    axios.get(process.env.REACT_APP_API_URL + `/searchjob?q=${query}`,
+    { headers: { Authorization: `Bearer ${storedToken}` } })
+      .then(response => {
+        setJobs(response.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   return (
     <div className="JobsListPage">
@@ -73,9 +83,20 @@ function JobsListPage() {
               </div>
             </div>
           </div>
-        </div><hr/>
+        </div><hr />
       </div>
       <div className="container mt-5">
+        <Form className="d-flex">
+          <Form.Control
+            type="search"
+            value={query}
+            placeholder="Search Job"
+            className="me-2 border border-2"
+            aria-label="Search"
+            onChange={(e) => { setQuery(e.target.value) }}
+          />
+          <Button variant="outline-success" onClick={searchJob}>Search</Button>
+        </Form>
         <div className="album my-5 pb-2 px-4 bg-primary bg-opacity-25 shadow-lg">
 
           <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4 mb-5">
@@ -91,9 +112,9 @@ function JobsListPage() {
                         Level: {job.level}
                       </Card.Text>
                       {isLoggedIn && (
-                      <Button className="bg-gradient" variant="primary"><NavLink to={`/jobs/${job._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
+                        <Button className="bg-gradient" variant="primary"><NavLink to={`/jobs/${job._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
                       {!isLoggedIn && (
-                      <Button className="bg-gradient" variant="primary"><NavLink to={`/login`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
+                        <Button className="bg-gradient" variant="primary"><NavLink to={`/login`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
                     </Card.Body>
                   </Card>
                 </div>
@@ -105,5 +126,6 @@ function JobsListPage() {
     </div>
   );
 }
+
 
 export default JobsListPage;
