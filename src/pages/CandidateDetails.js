@@ -51,7 +51,7 @@ function CandidateDetailsPage(props) {
                                                 <p><strong>Primary Role:</strong> {candidate.role}</p>
 
                                                 <p><strong>Skills:</strong> {candidate.skills}</p>
-                                                <p><strong>{candidate.firstName} {candidate.lastName}'s </strong> <Link target={candidate.linkedin} > LinkedIn Profile</Link></p>
+                                                <p><strong>{candidate.firstName} {candidate.lastName}'s </strong> <Link target="_blank" to={{pathname: candidate.linkedin}} > LinkedIn Profile</Link></p>
                                             </div>
                                         </div>
                                     </div>
