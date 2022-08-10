@@ -6,6 +6,7 @@ import { Button, Image } from 'react-bootstrap';
 
 function CandidateDetailsPage(props) {
     const [candidate, setCandidate] = useState(null);
+    const [message, setMessage] = useState("");
     // Get the URL parameter `:candidateId` 
     const { candidateId } = useParams();
 
@@ -13,15 +14,20 @@ function CandidateDetailsPage(props) {
 
 
     const getCandidate = () => {
+        setMessage("");
         axios
             .get(`${process.env.REACT_APP_API_URL}/candidates/${candidateId}`,
-            { headers: { Authorization: `Bearer ${storedToken}` } }
+                { headers: { Authorization: `Bearer ${storedToken}` } }
             )
             .then((response) => {
+                setMessage("");
                 const oneCandidate = response.data;
                 setCandidate(oneCandidate);
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+                setMessage("Opps! This candidate does not exist :(");
+                console.log(error)
+            });
     };
 
     useEffect(() => {
@@ -33,6 +39,20 @@ function CandidateDetailsPage(props) {
     return (
         <div className="CandidateDetails">
             <div className="p-5 bg-image" style={{ backgroundImage: `url(/next-job-header5.png)`, height: '300px', backgroundRepeat: 'no-repeat', backgroundSize: "cover" }} />
+            {message &&
+                <div className="mx-5">
+                    <div className="card mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-75px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
+                        <div className="my-5 py-4">
+                            <div className="container dark-grey-text mt-2 px-4 bg-light bg-opacity-25">
+                                <div className="row wow fadeIn">
+                                    <div className="col">
+                                        <h1 className="text-center">{message}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>}
             {candidate && (
                 <div className="mx-5">
                     <div className="card mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-100px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
@@ -75,7 +95,7 @@ function CandidateDetailsPage(props) {
                                     <div className="text-start col-md-8 mb-4 ps-4">
 
                                         <p className="lead font-weight-bold"><strong>About:</strong></p>
-                                        <p style={{whiteSpace: 'pre-wrap'}}>{candidate.about}</p>
+                                        <p style={{ whiteSpace: 'pre-wrap' }}>{candidate.about}</p>
 
                                     </div>
 
