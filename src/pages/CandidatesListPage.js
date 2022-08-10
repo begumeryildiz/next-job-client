@@ -2,12 +2,16 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { Card, Button, Image } from 'react-bootstrap';
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context"
 
 
 function CandidatesListPage() {
   const [candidates, setCandidates] = useState([]);
 
   const storedToken = localStorage.getItem("authToken");
+  const { isLoggedIn } = useContext(AuthContext);
+
 
   const getAllCandidates = () => {
     axios
@@ -57,7 +61,10 @@ function CandidatesListPage() {
                       <Card.Text>
                         {candidate.role}
                       </Card.Text>
-                      <Button className="bg-gradient" variant="primary"><NavLink to={`/candidates/${candidate._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>
+                      {isLoggedIn && (
+                      <Button className="bg-gradient" variant="primary"><NavLink to={`/candidates/${candidate._id}`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
+                      {!isLoggedIn && (
+                      <Button className="bg-gradient" variant="primary"><NavLink to={`/login`}><p className="text-white m-0">More Details</p></NavLink></Button>)}
                     </Card.Body>
                   </Card>
                 </div>
