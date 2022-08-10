@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { Button, Image } from 'react-bootstrap';
 
 
@@ -51,7 +51,7 @@ function CandidateDetailsPage(props) {
                                                 <p><strong>Primary Role:</strong> {candidate.role}</p>
 
                                                 <p><strong>Skills:</strong> {candidate.skills}</p>
-                                                <p><strong>{candidate.firstName} {candidate.lastName}'s </strong> <Link target="_blank" to={{pathname: candidate.linkedin}} > LinkedIn Profile</Link></p>
+                                                <p><strong>{candidate.firstName} {candidate.lastName}'s </strong> <a target="_blank" href={candidate.linkedin} > LinkedIn Profile</a></p>
                                             </div>
                                         </div>
                                     </div>
