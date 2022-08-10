@@ -253,7 +253,7 @@ function AddEditCandidate(props) {
                                     <div className="form-outline mb-4">
                                         <div className="form-outline">
                                             <label className="form-label">LinkedIn Profile Link</label>
-                                            <input type="text"
+                                            <input type="url"
                                                 name="linkedin"
                                                 value={linkedin}
                                                 onChange={(e) => setLinkedin(e.target.value)} className="form-control" required></input>
