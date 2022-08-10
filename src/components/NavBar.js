@@ -16,7 +16,7 @@ function NavBar() {
    
 
     return (
-        <Navbar  className ="navbar fw-bold bg-gradient" fixed="sticky" collapseOnSelect expand="lg" bg="primary" variant="dark">
+        <Navbar  className ="fw-bold bg-gradient" collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container >
                 <Nav.Link href="/">
                     <Image src="/next-job-logo-white.png" height="30" className=" rounded d-inline-block align-text-top" alt="logo" />
