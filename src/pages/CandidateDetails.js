@@ -51,7 +51,7 @@ function CandidateDetailsPage(props) {
                                                 <p><strong>Primary Role:</strong> {candidate.role}</p>
 
                                                 <p><strong>Skills:</strong> {candidate.skills}</p>
-                                                <p><strong>{candidate.firstName} {candidate.lastName}'s </strong> <a target="_blank" href={candidate.linkedin} > LinkedIn Profile</a></p>
+                                                <p><strong>{candidate.firstName} {candidate.lastName}'s </strong> <a target="_blank" href={`${candidate.linkedin}`} > LinkedIn Profile</a></p>
                                             </div>
                                         </div>
                                     </div>
