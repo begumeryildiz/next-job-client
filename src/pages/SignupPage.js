@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Button, Image, Form } from 'react-bootstrap';
+import { AuthContext } from '../context/auth.context';
 
 
 
@@ -13,6 +14,7 @@ function SignupPage(props) {
     const [userType, setUserType] = useState("candidate");
 
     const [errorMessage, setErrorMessage] = useState(undefined);
+    const { storeToken, authenticateUser } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -27,7 +29,12 @@ function SignupPage(props) {
         // If the request resolves with an error, set the error message in the state
         axios.post(`${process.env.REACT_APP_API_URL}/signup`, requestBody)
             .then((response) => {
-                navigate('/login');
+                console.log('JWT token', response.data.authToken);
+
+                storeToken(response.data.authToken);
+                authenticateUser();
+
+                navigate('/');
             })
             .catch((error) => {
                 const errorDescription = error.response.data.errorMessage;
