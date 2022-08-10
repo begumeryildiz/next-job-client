@@ -25,7 +25,7 @@ function CandidateDetailsPage(props) {
                 setCandidate(oneCandidate);
             })
             .catch((error) => {
-                setMessage("Opps! This candidate does not exist :(");
+                setMessage("Oops! This candidate does not exist :(");
                 console.log(error)
             });
     };
