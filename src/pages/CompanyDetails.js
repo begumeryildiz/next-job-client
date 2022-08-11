@@ -41,7 +41,7 @@ function CompanyDetailsPage(props) {
                                 <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4">
                                     <div className="text-center col-md-5 border">
                                         <div className="py-5">
-                                            <div className="">
+                                            <div>
                                                 <h2>{company.name}</h2>
                                             </div>
                                             <div>
@@ -51,7 +51,7 @@ function CompanyDetailsPage(props) {
                                     </div>
 
                                     <div className="text-start col-md-6 px-5">
-                                        <p className="lead font-weight-bold"><strong>Company Description:</strong></p>
+                                        <p><strong>Company Description:</strong></p>
                                         <p style={{ whiteSpace: 'pre-wrap' }}>{company.description}</p>
                                     </div>
                                 </div>

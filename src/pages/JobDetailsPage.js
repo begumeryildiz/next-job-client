@@ -58,51 +58,58 @@ function JobDetailsPage(props) {
             {job && (
                 <div className="mx-5">
                     <div className="card mb-5 mx-md-5 bg-light bg-opacity-75 shadow-5-strong shadow-lg" id="no-scale" style={{ marginTop: "-75px", background: "hsla(0, 0%, 100%, 0.8)", backdropFilter: "blur(30px)" }}>
-                        <div className="my-5 py-4">
-
-                            <div className="text-center col">
-                                <div className="p-4">
-                                    <div className="mb-5">
-                                        <h2>{job.title}</h2>
+                        <div className="py-4">
+                            <div className="container">
+                                <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-2 g-4">
+                                    <div className="text-center col-md-5 border">
+                                        <div className="py-5">
+                                            <div className="mb-5">
+                                                <h2>{job.title}</h2>
+                                            </div>
+                                            <div>
+                                                <p><strong>Company:</strong> {job.company.name}</p>
+                                                <p><strong>Level:</strong> {job.level}</p>
+                                                <p><strong>Skills:</strong> {job.skills}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="lead">
-                                        <p><strong>Company:</strong> {job.company.name}</p>
-                                        <p><strong>Level:</strong> {job.level}</p>
-                                        <p><strong>Skills:</strong> {job.skills}</p>
-                                        <p className="lead font-weight-bold"><strong>Job Description:</strong></p>
+                                    <div className="text-start col-md-6 px-5">
+                                        <p><strong>Job Description:</strong></p>
                                         <p style={{ whiteSpace: 'pre-wrap' }}>{job.description}</p>
-                                        {isOwner(job) && 
-                                        <div>
-                                            <p><strong>Applicants:</strong></p>
-                                            <ul style={{ listStyleType: 'none'}}>
-                                                {job.applicants.map((applicant) => {
-                                                    return (<li key={applicant._id}><NavLink to={`/candidates/${applicant._id}`}>{applicant.firstName+" "+applicant.lastName}</NavLink></li>)
-                                                })}
-                                            </ul>
-                                        </div>}
                                     </div>
                                 </div>
+
+
+                                {isOwner(job) &&
+                                    <div>
+                                        <p><strong>Applicants:</strong></p>
+                                        <ul style={{ listStyleType: 'none' }}>
+                                            {job.applicants.map((applicant) => {
+                                                return (<li key={applicant._id}><NavLink to={`/candidates/${applicant._id}`}>{applicant.firstName + " " + applicant.lastName}</NavLink></li>)
+                                            })}
+                                        </ul>
+                                    </div>}
                             </div>
-                            <div className="my-4">
-                                <NavLink className="mx-4" to="/jobs">
-                                    <Button className="bg-gradient  text-white px-5 mb-4">Back to Jobs</Button>
-                                </NavLink>
-
-                                {user.userType === "candidate" &&
-                                    <Button className="bg-gradient btn-info fw-bold text-white px-5 mb-4" onClick={applyJob}>Apply the Job</Button>}
-
-
-                                {isOwner(job) && <NavLink to={`/jobs/edit/${jobId}`}>
-                                    <Button className="bg-gradient text-white px-5 mb-4">Edit Job</Button>
-                                </NavLink>}
-                            </div>
-                            <p>{message}</p>
                         </div>
                     </div>
-                </div>
+                    <div className="my-4">
+                        <NavLink className="mx-4" to="/jobs">
+                            <Button className="bg-gradient  text-white px-5 mb-4">Back to Jobs</Button>
+                        </NavLink>
 
-            )}
-        </div>
+                        {user.userType === "candidate" &&
+                            <Button className="bg-gradient btn-info fw-bold text-white px-5 mb-4" onClick={applyJob}>Apply the Job</Button>}
+
+
+                        {isOwner(job) && <NavLink to={`/jobs/edit/${jobId}`}>
+                            <Button className="bg-gradient text-white px-5 mb-4">Edit Job</Button>
+                        </NavLink>}
+                    </div>
+                    <p>{message}</p>
+                </div>
+            )
+            }
+        </div >
     );
 }
 
