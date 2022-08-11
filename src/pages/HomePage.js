@@ -24,7 +24,7 @@ function HomePage() {
           <div className="album mt-5 pb-2 px-4">
             <div className="row row row-cols-1 row-cols-sm-1 row-cols-md-3 g-4">
               <div className="col my-4" >
-                <Card className="homepagecard mx-2 border-0" >
+                <Card className="pagecard mx-2 border-0" >
                   <Card.Body>
                     <Card.Title>
                       <Image src="/next-job-icon6.png" style={{ height: "65px" }} />
@@ -36,7 +36,7 @@ function HomePage() {
                 </Card>
               </div>
               <div className="col my-4" >
-                <Card className="homepagecard mx-2 border-0" >
+                <Card className="pagecard mx-2 border-0" >
                   <Card.Body>
                     <Card.Title>
                       <Image src="/next-job-icon4.png" style={{ height: "65px" }} />
@@ -49,7 +49,7 @@ function HomePage() {
                 </Card>
               </div>
               <div className="col my-4" >
-                <Card className="homepagecard mx-2 border-0" >
+                <Card className="pagecard mx-2 border-0" >
                   <Card.Body>
                     <Card.Title>
                       <Image src="/next-job-icon5.png" style={{ height: "65px" }} />

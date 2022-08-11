@@ -52,7 +52,7 @@ function CompaniesListPage() {
           {companies.map((company) => {
               return (
                 <div className="col"  key={company._id}>
-                  <Card className="shadow-lg" >
+                  <Card className="pagecard mx-2 shadow-lg" >
                     <Card.Header className="fw-bold" as="h5">{company.name}</Card.Header>
                     <Card.Body>
                       <Card.Title>Location: {}</Card.Title>

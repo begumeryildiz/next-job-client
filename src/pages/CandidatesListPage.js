@@ -53,7 +53,7 @@ function CandidatesListPage() {
             {candidates.map((candidate) => {
               return (
                 <div className="Candidates col" key={candidate._id} >
-                  <Card className="shadow-lg" >
+                  <Card className="pagecard shadow-lg" >
                     <Card.Img variant="top" className="rounded-circle rounded m-auto" style={{ width: '120px' }} src={candidate.image} />
                     <Card.Header className="fw-bold" as="h5">{candidate.firstName} {candidate.lastName}</Card.Header>
                     <Card.Body>

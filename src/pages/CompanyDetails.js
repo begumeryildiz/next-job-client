@@ -82,7 +82,7 @@ function CompanyDetailsPage(props) {
                         {company &&
                             company.jobs.map((job) => (
                                 <div key={job._id} className="col">
-                                    <Card className="shadow-lg">
+                                    <Card className="pagecard mx-2 shadow-lg">
                                         <Card.Header className="fw-bold" as="h5">{job.title}</Card.Header>
                                         <Card.Body>
                                             <Card.Title>Level: {job.level}</Card.Title>

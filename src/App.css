@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-.homepagecard:hover, .homepagecard:active {
+.pagecard:hover, .pagecard:active {
     transform: scale(1.1);
     transition: transform 0.2s ease;
     border-radius: 5px;
