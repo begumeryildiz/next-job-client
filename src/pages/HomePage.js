@@ -30,7 +30,8 @@ function HomePage() {
                       <Image src="/next-job-icon6.png" style={{ height: "65px" }} />
                       <h4>Building Company</h4>
                     </Card.Title>
-                    <Card.Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae viverra lectus, ac dapibus metus. Vivamus sodales ante nec enim tincidunt luctus.
+                    <Card.Text>
+                      Expending your company is not an easy task. Let us help you find good candidates and join your company as valuable members.
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -43,7 +44,7 @@ function HomePage() {
                       <h4>Finding Best Job</h4>
                     </Card.Title>
                     <Card.Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae viverra lectus, ac dapibus metus. Vivamus sodales ante nec enim tincidunt luctus.
+                      Looking for the next step in your career? Maybe it is the first step. Wherever you are in your life, you are in the correct place.
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -56,7 +57,7 @@ function HomePage() {
                       <h4>Creating Quality Team</h4>
                     </Card.Title>
                     <Card.Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae viverra lectus, ac dapibus metus. Vivamus sodales ante nec enim tincidunt luctus.
+                      Hiring wrong team member can cost you more than money. Let us help you find good people who are fit your company culture.
                     </Card.Text>
                   </Card.Body>
                 </Card>

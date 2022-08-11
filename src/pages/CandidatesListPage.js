@@ -42,7 +42,7 @@ function CandidatesListPage() {
 
         <div className="my-5">
           <h2 className="mb-4 fw-bold">Candidates</h2>
-          <p className=" mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+          <p>Great work places should work with great candidates. Here you will find the largest high quality candidate pool in the world. All candidates are hand picked and vetted.</p>
         </div> <hr />
       </div>
       <div className="container mt-5">

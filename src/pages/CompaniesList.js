@@ -41,7 +41,8 @@ function CompaniesListPage() {
 
         <div className="my-5">
           <h2 className="mb-4 fw-bold">Companies</h2>
-          <p className=" mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+          <p>We are only working with the best companies all ovver the world. Companies are eveluated on their office, salary and culture.</p>
+          <p>They are all great places to work and we can vouch for them.</p>
         </div> <hr />
       </div>
       <div className="container mt-5">
