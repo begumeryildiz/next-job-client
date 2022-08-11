@@ -71,13 +71,13 @@ function JobDetailsPage(props) {
                                                 <p><strong>Level:</strong> {job.level}</p>
                                                 <p><strong>Skills:</strong> {job.skills}</p>
                                                 {isOwner(job) &&
-                                                    <div>
+                                                    <div className="pt-3">
                                                         <p><strong>Applicants:</strong></p>
-                                                        <ul style={{ listStyleType: 'none' }}>
+                                                        <div>
                                                             {job.applicants.map((applicant) => {
-                                                                return (<li key={applicant._id}><NavLink to={`/candidates/${applicant._id}`}>{applicant.firstName + " " + applicant.lastName}</NavLink></li>)
+                                                                return (<p key={applicant._id}><NavLink to={`/candidates/${applicant._id}`}>{applicant.firstName + " " + applicant.lastName}</NavLink></p>)
                                                             })}
-                                                        </ul>
+                                                        </div>
                                                     </div>}
                                             </div>
                                         </div>
