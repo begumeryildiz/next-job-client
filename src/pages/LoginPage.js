@@ -61,7 +61,7 @@ function LoginPage(props) {
 
 
                                             <h5 className="fw-normal mb-3 pb-3 text-primary fw-bold">Sign into your account</h5>
-                                            {errorMessage && <p className="error-message">{errorMessage}</p>}
+                                            {errorMessage && <p className="error-message text-danger fw-bold">{errorMessage}</p>}
 
                                             <div className="form-outline mb-4">
                                                 <label className="form-label">Username</label>
