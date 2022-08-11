@@ -70,6 +70,15 @@ function JobDetailsPage(props) {
                                                 <p><strong>Company:</strong> {job.company.name}</p>
                                                 <p><strong>Level:</strong> {job.level}</p>
                                                 <p><strong>Skills:</strong> {job.skills}</p>
+                                                {isOwner(job) &&
+                                                    <div>
+                                                        <p><strong>Applicants:</strong></p>
+                                                        <ul style={{ listStyleType: 'none' }}>
+                                                            {job.applicants.map((applicant) => {
+                                                                return (<li key={applicant._id}><NavLink to={`/candidates/${applicant._id}`}>{applicant.firstName + " " + applicant.lastName}</NavLink></li>)
+                                                            })}
+                                                        </ul>
+                                                    </div>}
                                             </div>
                                         </div>
                                     </div>
@@ -78,17 +87,6 @@ function JobDetailsPage(props) {
                                         <p style={{ whiteSpace: 'pre-wrap' }}>{job.description}</p>
                                     </div>
                                 </div>
-
-
-                                {isOwner(job) &&
-                                    <div>
-                                        <p><strong>Applicants:</strong></p>
-                                        <ul style={{ listStyleType: 'none' }}>
-                                            {job.applicants.map((applicant) => {
-                                                return (<li key={applicant._id}><NavLink to={`/candidates/${applicant._id}`}>{applicant.firstName + " " + applicant.lastName}</NavLink></li>)
-                                            })}
-                                        </ul>
-                                    </div>}
                             </div>
                         </div>
                     </div>
